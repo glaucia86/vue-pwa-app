@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script src="../book.js"></script>
+<script src="./book.js"></script>
 
 <style>
 .book {
