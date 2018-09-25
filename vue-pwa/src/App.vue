@@ -17,7 +17,7 @@
 import data from './db.json';
 import Book from './components/Books/Book';
 
-import NotificationService from './push-notification';
+import NotificationService from './NotificationService';
 
 export default {
   name: 'app',
@@ -27,7 +27,10 @@ export default {
     };
   },
   mounted() {
-    NotificationService.notify('Humanidade tem que acabar');
+    NotificationService.notify(
+      'O que a humanidade tem mais do que eu?',
+      'Humanidade tem que acabar',
+    );
   },
   created() {
     this.lists = data;

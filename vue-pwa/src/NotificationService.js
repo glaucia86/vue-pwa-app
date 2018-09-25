@@ -7,8 +7,14 @@
 const hasSupportNotification = typeof window !== 'undefined' && ('Notification' in window);
 
 export default class NotificationService {
-  static privateNotify(message) {
-    return new Notification(message);
+  static privateNotify(title, body, icon, otherOptions = {}) {
+    const options = {
+      body,
+      icon,
+      ...otherOptions,
+    };
+
+    return new Notification(title, options);
   }
 
   static askPermission(messageOnAccept = 'Thank you for accepting') {
@@ -16,7 +22,7 @@ export default class NotificationService {
       Notification.requestPermission((permission) => {
         // If the user accepts, let's create a notification
         if (permission === 'granted') {
-          NotificationService.privateNotify(messageOnAccept);
+          NotificationService.privateNotify('Permission Ok', messageOnAccept);
         }
       });
     }
@@ -26,11 +32,11 @@ export default class NotificationService {
     return Notification.permission === 'granted';
   }
 
-  static notify(message) {
+  static notify(title, body) {
     if (hasSupportNotification) {
       return NotificationService.isGratedPermission() ?
-        NotificationService.privateNotify(message) :
-        NotificationService.askPermission(message);
+        NotificationService.privateNotify(title, body) :
+        NotificationService.askPermission(title, body);
     }
 
     console.error('The user browser has no support for Notification');
