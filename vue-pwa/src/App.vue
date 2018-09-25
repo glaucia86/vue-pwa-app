@@ -69,4 +69,9 @@ header span {
   box-sizing: border-box;
   padding-top: 16px;
 }
+
+.books {
+  column-count: 1;
+  column-gap: 1em;
+}
 </style>

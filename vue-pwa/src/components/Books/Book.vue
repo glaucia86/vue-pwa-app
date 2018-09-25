@@ -28,6 +28,17 @@
 img {
   display: block;
   width: 100%;
-};
+}
+
+.book {
+  display: inline-block;
+  transition: all 100ms ease-in-out;
+}
+
+.book:hover {
+  transform: translateY(-0.5em);
+  background: #ebebeb;
+}
+
 </style>
 
