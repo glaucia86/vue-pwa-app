@@ -9,6 +9,7 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -35,6 +36,21 @@ module.exports = merge(baseWebpackConfig, {
       inject: true,
       serviceWorkerLoader: `<script>${fs.readFileSync(path.join(__dirname,
         './service-worker-dev.js'), 'utf-8')}</script>`
+    }),
+
+    // service worker caching
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'vue-pwa-app',
+      filename: 'service-worker.js',
+      staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/res\.bit.ly\.com\//,
+          handler: 'cacheFirst',
+        },
+      ],
+      minify: true,
+      stripPrefix: 'dist/',
     }),
     new FriendlyErrorsPlugin()
   ]
