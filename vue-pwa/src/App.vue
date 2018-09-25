@@ -17,6 +17,8 @@
 import data from './db.json';
 import Book from './components/Books/Book';
 
+import NotificationService from './push-notification';
+
 export default {
   name: 'app',
   data() {
@@ -24,7 +26,9 @@ export default {
       lists: [],
     };
   },
-
+  mounted() {
+    NotificationService.notify('Humanidade tem que acabar');
+  },
   created() {
     this.lists = data;
   },
