@@ -40,5 +40,10 @@ img {
   background: #ebebeb;
 }
 
+.card {
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  transition: all 100ms ease-in-out;
+}
 </style>
 

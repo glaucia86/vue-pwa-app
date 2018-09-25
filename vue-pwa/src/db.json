@@ -1,9 +1,9 @@
 [
 
   {
-    "imageUrl": "https://bit.ly/2NAfPPH",
-    "title": "The Book of Trees",
-    "description": "Our critically acclaimed bestseller Visual Complexity was the first in-depth examination of the burgeoning field of information visualization."
+    "imageUrl": "https://bit.ly/2QXqWA7",
+    "title": "Node.js 8 the Right Way: Practical, Server-Side JavaScript That Scales",
+    "description": "Node.js is the platform of choice for creating modern web services. This fast-paced book gets you up to speed on server-side programming with Node.js 8."
   },
   {
     "imageUrl": "https://bit.ly/2zsHfOF",
@@ -19,5 +19,35 @@
     "imageUrl": "https://bit.ly/2N0IZ5h",
     "title": "The Science of Good Cooking: Master 50 Simple Concepts to Enjoy a Lifetime of Success in the Kitchen",
     "description": "Unlock a lifetime of successful cooking with this groundbreaking new volume from the editors of Cook's Illustrated, the magazine that put food science on the map."
+  },
+  {
+    "imageUrl": "https://bit.ly/2NAfPPH",
+    "title": "The Book of Trees",
+    "description": "Our critically acclaimed bestseller Visual Complexity was the first in-depth examination of the burgeoning field of information visualization."
+  },
+  {
+    "imageUrl": "https://bit.ly/2If8ChY",
+    "title": "Becoming a Better Programmer: A Handbook for People Who Care About Code",
+    "description": "If you’re passionate about programming and want to get better at it, you’ve come to the right source."
+  },
+  {
+    "imageUrl": "https://bit.ly/2Dwxhjl",
+    "title": "JavaScript: Novice to Ninja",
+    "description": "avaScript is a must-have skill for all web developers. JavaScript: Novice to Ninja is a fun, practical, and comprehensive guide to the modern usage of this deceptively powerful language."
+  },
+  {
+    "imageUrl": "https://bit.ly/2xXYlSP",
+    "title": "ASP.NET Core 1.1 Web API For Beginners: How To Build a Web API",
+    "description": "C# (Intermediate level; including Generics, Reflection and Object-Oriented Programming (OOP))."
+  },
+  {
+    "imageUrl": "https://bit.ly/2QY4Ptu",
+    "title": "What Is Node?",
+    "description": "Node.js. It’s the latest in a long line of “Are you cool enough to use me?” programming languages, APIs, and toolkits."
+  },
+  {
+    "imageUrl": "https://bit.ly/2zsSruJ",
+    "title": "Vue.js in Action",
+    "description": "Vue.js is a front-end framework that builds on many of the reactive UI ideas introduced in React.js."
   }
 ]
