@@ -14,30 +14,60 @@
 </template>
 
 <script>
-import data from './db.json';
-import Book from './components/Books/Book';
+import data from "./db.json";
+import Book from "./components/Books/Book";
 
-import NotificationService from './NotificationService';
+import NotificationService from "./NotificationService";
+
+import firebase from "firebase";
 
 export default {
-  name: 'app',
+  name: "app",
   data() {
     return {
-      lists: [],
+      lists: []
     };
   },
   mounted() {
     NotificationService.notify(
-      'O que a humanidade tem mais do que eu?',
-      'Humanidade tem que acabar',
+      "O que a humanidade tem mais do que eu?",
+      "Humanidade tem que acabar"
     );
+
+    var config = {
+      apiKey: "AIzaSyBJ7jEZJY7G-10JbcTEsN9e9ioJqXeRg50",
+      authDomain: "smartpass-217519.firebaseapp.com",
+      databaseURL: "https://smartpass-217519.firebaseio.com",
+      projectId: "smartpass-217519",
+      storageBucket: "smartpass-217519.appspot.com",
+      messagingSenderId: "839840973744"
+    };
+    firebase.initializeApp(config);
+
+    const messaging = firebase.messaging();
+
+    messaging
+      .requestPermission()
+      .then(() => {
+        return messaging.getToken();
+      })
+      .then(token => {
+        console.log("token do usuário:", token);
+
+        debugger;
+
+        return token;
+      })
+      .catch(error => {
+        console.error(error);
+      });
   },
   created() {
     this.lists = data;
   },
   components: {
-    Book,
-  },
+    Book
+  }
 };
 </script>
 
@@ -85,21 +115,21 @@ header span {
 @media only screen and (min-width: 500px) {
   .books {
     column-count: 2;
-  };
+  }
 }
 @media only screen and (min-width: 700px) {
   .books {
     column-count: 3;
-  };
+  }
 }
 @media only screen and (min-width: 900px) {
   .books {
     column-count: 4;
-  };
+  }
 }
 @media only screen and (min-width: 1100px) {
   .books {
     column-count: 5;
-  };
+  }
 }
 </style>
