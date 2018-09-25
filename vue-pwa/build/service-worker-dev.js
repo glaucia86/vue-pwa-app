@@ -15,3 +15,5 @@ self.addEventListener('activate', () => {
     }
   });
 });
+
+console.log('CARALHOS: VOADORES')

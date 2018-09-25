@@ -14,33 +14,31 @@
 </template>
 
 <script>
-import data from "./db.json";
-import Book from "./components/Books/Book";
-
-import NotificationService from "./NotificationService";
-
-import firebase from "firebase";
+import firebase from 'firebase';
+import data from './db.json';
+import Book from './components/Books/Book';
+import NotificationService from './NotificationService';
 
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {
-      lists: []
+      lists: [],
     };
   },
   mounted() {
     NotificationService.notify(
-      "O que a humanidade tem mais do que eu?",
-      "Humanidade tem que acabar"
+      'O que a humanidade tem mais do que eu?',
+      'Humanidade tem que acabar',
     );
 
-    var config = {
-      apiKey: "AIzaSyBJ7jEZJY7G-10JbcTEsN9e9ioJqXeRg50",
-      authDomain: "smartpass-217519.firebaseapp.com",
-      databaseURL: "https://smartpass-217519.firebaseio.com",
-      projectId: "smartpass-217519",
-      storageBucket: "smartpass-217519.appspot.com",
-      messagingSenderId: "839840973744"
+    const config = {
+      apiKey: 'AIzaSyBJ7jEZJY7G-10JbcTEsN9e9ioJqXeRg50',
+      authDomain: 'smartpass-217519.firebaseapp.com',
+      databaseURL: 'https://smartpass-217519.firebaseio.com',
+      projectId: 'smartpass-217519',
+      storageBucket: 'smartpass-217519.appspot.com',
+      messagingSenderId: '839840973744',
     };
     firebase.initializeApp(config);
 
@@ -48,26 +46,25 @@ export default {
 
     messaging
       .requestPermission()
-      .then(() => {
-        return messaging.getToken();
-      })
-      .then(token => {
-        console.log("token do usuário:", token);
+      .then(() => messaging.getToken())
+      .then((token) => {
+        console.log('Token do usuário: ', token);
 
         debugger;
 
         return token;
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
+        return 'Oi';
       });
   },
   created() {
     this.lists = data;
   },
   components: {
-    Book
-  }
+    Book,
+  },
 };
 </script>
 
