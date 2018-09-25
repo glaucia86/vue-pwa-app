@@ -86,10 +86,10 @@ const webpackConfig = merge(baseWebpackConfig, {
           module.resource &&
           /\.js$/.test(module.resource) &&
           module.resource.indexOf(
-            path.join(__dirname, '../node_modules')
+            path.join(__dirname, '../node_modules'),
           ) === 0
-        ),
-      }
+        );
+      },
     }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
@@ -125,7 +125,7 @@ if (config.build.productionGzip) {
       algorithm: 'gzip',
       test: new RegExp(
         `\\.(${
-        config.build.productionGzipExtensions.join('|')
+          config.build.productionGzipExtensions.join('|')
         })$`,
       ),
       threshold: 10240,
