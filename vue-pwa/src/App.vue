@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import firebase from 'firebase';
 import data from './db.json';
 import Book from './components/Books/Book';
 import NotificationService from './NotificationService';
@@ -31,33 +30,6 @@ export default {
       'O que a humanidade tem mais do que eu?',
       'Humanidade tem que acabar',
     );
-
-    const config = {
-      apiKey: 'AIzaSyBJ7jEZJY7G-10JbcTEsN9e9ioJqXeRg50',
-      authDomain: 'smartpass-217519.firebaseapp.com',
-      databaseURL: 'https://smartpass-217519.firebaseio.com',
-      projectId: 'smartpass-217519',
-      storageBucket: 'smartpass-217519.appspot.com',
-      messagingSenderId: '839840973744',
-    };
-    firebase.initializeApp(config);
-
-    const messaging = firebase.messaging();
-
-    messaging
-      .requestPermission()
-      .then(() => messaging.getToken())
-      .then((token) => {
-        console.log('Token do usuário: ', token);
-
-        debugger;
-
-        return token;
-      })
-      .catch((error) => {
-        console.error(error);
-        return 'Oi';
-      });
   },
   created() {
     this.lists = data;
