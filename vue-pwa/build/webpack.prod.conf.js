@@ -110,6 +110,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       cacheId: 'vue-pwa-app',
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/res\.bit.ly\.com\//,
+          handler: 'cacheFirst',
+        },
+      ],
       minify: true,
       stripPrefix: 'dist/',
     }),
