@@ -11,8 +11,19 @@
 </template>
 
 <script>
+import data from './db.json';
+
 export default {
   name: 'app',
+  data() {
+    return {
+      lists: []
+    }
+  },
+
+  created() {
+    this.lists = data;
+  }
 };
 </script>
 
