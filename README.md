@@ -10,6 +10,8 @@ Repositório responsável por código de uma aplicação de PWA com Vue.js.
 - Conceitos de vue-router;
 - ES 5/6;
 - Conceitos de Service Worker;
+- Conceitos de Web Push Notification;
+- Firebase
 
 
 ## Executando Código Localmente: :bulb:
@@ -21,7 +23,7 @@ Caso queira testar a aplicação de maneira local basta seguir os passos abaixo:
 Para começar, você deve clonar o repositório do projeto na sua máquina e instalar as dependências usando o comando:
 
 ```
-> cd auth-vue-app 
+> cd vue-pwa-app 
 > npm install
 ```
 
@@ -75,13 +77,10 @@ Ou através do comando:
 # install serve
 > npm install -g serve
 
+> npm run build
+
 # serve
 > serve dist
 ```
 
 Agora, abre a página da aplicação em `http://localhost:5000`. E pronto a aplicação será executada de maneira local na sua máquina.
-
-
-      
-
-
